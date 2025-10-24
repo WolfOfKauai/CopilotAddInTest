@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArcGIS defaultAssembly="MyCopilotAddin.dll"
+        defaultNamespace="MyCopilotAddin"
+        xmlns="http://schemas.esri.com/DADF/Registry"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+
+  <AddInInfo id="{17a296a0-1344-4556-bde6-8c96ffeceb36}" version="1.0" desktopVersion="3.6.59419" product="ArcGISPro">
+    <Name>MyCopilotAddin</Name>
+    <Description>MyCopilotAddin description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>wlfka</Author>
+    <Company>Acme</Company>
+    <Date>10/21/2025 5:19:45 AM</Date>
+    <Subject>Framework</Subject>
+  </AddInInfo>
+
+  <modules>
+    <insertModule id="MyCopilotAddin_Module" className="Module1" autoLoad="false" caption="Module1">
+      <tabs>
+        <tab id="MyCopilotAddin_3DLotsTab" caption="3D Lots" keytip="3D">
+          <group refID="MyCopilotAddin_LotCreationGroup"/>
+        </tab>
+      </tabs>
+      <groups>
+        <group id="MyCopilotAddin_LotCreationGroup" caption="Lots creation" keytip="G1">
+          <button refID="MyCopilotAddin_Show3DLotCreationButton"/>
+        </group>
+      </groups>
+      <controls>
+        <button id="MyCopilotAddin_Show3DLotCreationButton" className="Show3DLotCreationButton" caption="Show 3D Lots Creation" keytip="B0"/>
+      </controls>
+      <dockPanes>
+        <dockPane id="MyCopilotAddin_3DLotCreationDockPane"
+                  className="LotCreationDockPaneViewModel"
+                  caption="3D Lots Creation"
+                  dock="right">
+          <content className="LotCreationDockPaneView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>
