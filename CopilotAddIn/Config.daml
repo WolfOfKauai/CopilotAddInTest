@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="CopilotAddIn.dll" 
+        defaultNamespace="CopilotAddIn" 
+        xmlns="http://schemas.esri.com/DADF/Registry" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{a1b2c3d4-e5f6-7890-abcd-ef1234567890}" version="1.0" desktopVersion="3.0.0">
+    <Name>CopilotAddIn</Name>
+    <Description>Sample ArcGIS Pro Add-in for testing Copilot development</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>Your Name</Author>
+    <Company>Your Company</Company>
+    <Date>10/21/2025</Date>
+    <Subject>Framework</Subject>
+  </AddInInfo>
+  <modules>
+    <insertModule id="CopilotAddIn_Module" className="Module1" autoLoad="false" caption="Module1">
+      <tabs>
+        <tab id="CopilotAddIn_Tab1" caption="Copilot Add-in" keytip="T1">
+          <group refID="CopilotAddIn_Group1"/>
+        </tab>
+      </tabs>
+      <groups>
+        <group id="CopilotAddIn_Group1" caption="Tools" keytip="G1">
+          <button refID="CopilotAddIn_Button1" size="large" />
+          <tool refID="CopilotAddIn_MapTool1" size="large" />
+          <button refID="CopilotAddIn_ShowDockpane" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <button id="CopilotAddIn_Button1" 
+                caption="Sample Button" 
+                className="Button1" 
+                loadOnClick="true" 
+                smallImage="Images\GenericButtonBlue16.png" 
+                largeImage="Images\GenericButtonBlue32.png" 
+                keytip="B1">
+          <tooltip heading="Sample Button">
+            This is a sample button that demonstrates basic ArcGIS Pro Add-in functionality.
+            <disabledText />
+          </tooltip>
+        </button>
+        <tool id="CopilotAddIn_MapTool1" 
+              caption="Sample Map Tool" 
+              className="MapTool1" 
+              loadOnClick="true" 
+              smallImage="Images\GenericButtonBlue16.png" 
+              largeImage="Images\GenericButtonBlue32.png" 
+              keytip="T1">
+          <tooltip heading="Sample Map Tool">
+            This is a sample map tool that demonstrates interactive map functionality.
+            Click on the map to interact with features.
+            <disabledText />
+          </tooltip>
+        </tool>
+        <button id="CopilotAddIn_ShowDockpane" 
+                caption="Show Dockpane" 
+                className="Button_ShowDockpane" 
+                loadOnClick="true" 
+                smallImage="Images\GenericButtonBlue16.png" 
+                largeImage="Images\GenericButtonBlue32.png" 
+                keytip="D1">
+          <tooltip heading="Show Dockpane">
+            Opens the sample dockpane window.
+            <disabledText />
+          </tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="CopilotAddIn_Dockpane1" 
+                  caption="Sample Dockpane" 
+                  className="Dockpane1ViewModel" 
+                  dock="group" 
+                  dockWith="esri_core_contentsDockPane">
+          <content className="Dockpane1View" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>
