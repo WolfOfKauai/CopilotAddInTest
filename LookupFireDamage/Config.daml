@@ -30,12 +30,9 @@
       <controls>
         <button id="StructureDamageLookup_Button"
                 className="StructureDamageLookupButton"
-                caption="Structure Damage Lookup"
-                tooltip="Lookup structure damage information"
-                image="FireSimulation32"
-                smallImage="FireSimulation16"
-                category="DamageLookup_Group"
-                appearsOnAddInTab="false"/>
+                caption="Structure Damage Lookup"                
+                largeImage="Images\FireSimulation32.png"
+                smallImage="Images\FireSimulation16.png"/>
       </controls> 
     </insertModule>
   </modules>
