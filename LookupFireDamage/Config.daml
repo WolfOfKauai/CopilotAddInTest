@@ -24,15 +24,17 @@
       </tabs>
       <groups>
         <group id="DamageLookup_Group" caption="Damage Lookup" appearsOnAddInTab="false">
-          <!-- host controls within groups -->
+          <button refID="StructureDamageLookup_Button"/>
         </group>
       </groups>
       <controls>
         <button id="StructureDamageLookup_Button"
                 className="StructureDamageLookupButton"
-                caption="Structure Damage Lookup"                
-                largeImage="Images\FireSimulation32.png"
-                smallImage="Images\FireSimulation16.png"/>
+                caption="Structure Damage Lookup"
+                largeImage="FireSimulation"
+                smallImage="FireSimulation">
+          <tooltip>Find structure damage by parcel identifier</tooltip>
+        </button>
       </controls> 
     </insertModule>
   </modules>
