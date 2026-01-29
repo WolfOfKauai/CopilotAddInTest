@@ -13,29 +13,37 @@
     <Company>Acme</Company>
     <Date>1/27/2026 11:16:01 AM</Date>
     <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>
 
   <modules>
     <insertModule id="LookupFireDamage_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
       <tabs>
         <tab id="FireDamage_Tab" caption="Fire Damage">
-          <group refID="DamageLookup_Group"/>
+          <group refID="DamageLookup_Group" />
         </tab>
       </tabs>
+              
       <groups>
         <group id="DamageLookup_Group" caption="Damage Lookup" appearsOnAddInTab="false">
-          <button refID="StructureDamageLookup_Button"/>
+          <button refID="StructureDamageLookup_Button" size="large" />
         </group>
       </groups>
+      
       <controls>
         <button id="StructureDamageLookup_Button"
-                className="StructureDamageLookupButton"
                 caption="Structure Damage Lookup"
-                largeImage="FireSimulation"
-                smallImage="FireSimulation">
-          <tooltip>Find structure damage by parcel identifier</tooltip>
+                className="StructureDamageLookupButton"
+                loadOnClick="true"
+                smallImage="FireSimulation16"
+                largeImage="FireSimulation32"
+                keytip="SDL">
+          <tooltip heading="Lookup Structure Damage">Lookup structure damage by parcel.<disabledText /></tooltip>
         </button>
-      </controls> 
+      </controls>
+      
     </insertModule>
   </modules>
 </ArcGIS>

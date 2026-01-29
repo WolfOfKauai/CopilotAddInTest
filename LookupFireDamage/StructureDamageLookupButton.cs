@@ -1,13 +1,14 @@
+using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
-using System.Windows;
+using ArcGIS.Desktop.Framework.Dialogs;
 
 namespace LookupFireDamage
 {
-    public class StructureDamageLookupButton : Button
+    internal class StructureDamageLookupButton : Button
     {
         protected override void OnClick()
         {
-            MessageBox.Show("Structure Damage Lookup button clicked.", "Fire Damage", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Structure Damage Lookup button clicked.", "Fire Damage");
         }
     }
 }
