@@ -8,7 +8,12 @@ namespace LookupFireDamage
     {
         protected override void OnClick()
         {
-            MessageBox.Show("Structure Damage Lookup button clicked.", "Fire Damage");
+            // Show the ParcelDockpane
+            var dockPane = FrameworkApplication.DockPaneManager.Find("ParcelDockpane");
+            if (dockPane != null)
+                dockPane.Activate();
+            else
+                MessageBox.Show("Parcel Dockpane could not be found.", "Error");
         }
     }
 }

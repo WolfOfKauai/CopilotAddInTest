@@ -1,0 +1,19 @@
+<UserControl x:Class="LookupFireDamage.ParcelDockpaneView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="200" d:DesignWidth="300">
+    <StackPanel Margin="10">
+        <Button Content="Select Parcel" Width="120" Height="30" Margin="0,0,0,10" Command="{Binding SelectParcelCommand}" />
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+            <Label Content="APN:" Width="50" VerticalAlignment="Center" />
+            <TextBox Text="{Binding APN}" IsReadOnly="True" Width="200" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Address:" Width="50" VerticalAlignment="Center" />
+            <TextBox Text="{Binding Address}" Width="200" />
+        </StackPanel>
+    </StackPanel>
+</UserControl>
