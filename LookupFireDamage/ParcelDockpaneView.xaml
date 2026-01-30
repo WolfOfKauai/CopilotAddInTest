@@ -15,5 +15,10 @@
             <Label Content="Address:" Width="50" VerticalAlignment="Center" />
             <TextBox Text="{Binding Address}" Width="200" />
         </StackPanel>
+        <Label Content="Damage Assessment Records" Margin="0,10,0,2" />
+        <ComboBox x:Name="DamageAssessmentRecords" ItemsSource="{Binding DamageAssessmentRecords}" SelectedItem="{Binding SelectedDamageAssessmentRecord}" DisplayMemberPath="RecordName" Width="Auto" />
+        <Label Content="Damage Level" Margin="0,10,0,2" />
+        <TextBox Text="{Binding DamageLevel}" IsReadOnly="True" Width="Auto" />
+        <Image Source="{Binding DamageImage}" Stretch="Uniform" Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=UserControl}}" Margin="0,10,0,0" />
     </StackPanel>
 </UserControl>

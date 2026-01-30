@@ -4,9 +4,18 @@ using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Mapping.Events;
 using System.Linq;
+using System.Collections.ObjectModel;
+using System.Windows.Media;
 
 namespace LookupFireDamage
 {
+    public class DamageAssessmentRecord
+    {
+        public string RecordName { get; set; }
+        public string DamageLevel { get; set; }
+        public ImageSource Image { get; set; }
+    }
+
     public class ParcelDockpaneViewModel : DockPane
     {
         private string _apn;
@@ -26,17 +35,57 @@ namespace LookupFireDamage
 
         public ICommand SelectParcelCommand { get; }
 
+        private ObservableCollection<DamageAssessmentRecord> _damageAssessmentRecords = new ObservableCollection<DamageAssessmentRecord>();
+        public ObservableCollection<DamageAssessmentRecord> DamageAssessmentRecords
+        {
+            get => _damageAssessmentRecords;
+            set => SetProperty(ref _damageAssessmentRecords, value, () => DamageAssessmentRecords);
+        }
+
+        private DamageAssessmentRecord _selectedDamageAssessmentRecord;
+        public DamageAssessmentRecord SelectedDamageAssessmentRecord
+        {
+            get => _selectedDamageAssessmentRecord;
+            set
+            {
+                if (SetProperty(ref _selectedDamageAssessmentRecord, value, () => SelectedDamageAssessmentRecord))
+                {
+                    DamageLevel = value?.DamageLevel ?? string.Empty;
+                    DamageImage = value?.Image;
+                }
+            }
+        }
+
+        private string _damageLevel;
+        public string DamageLevel
+        {
+            get => _damageLevel;
+            set => SetProperty(ref _damageLevel, value, () => DamageLevel);
+        }
+
+        private ImageSource _damageImage;
+        public ImageSource DamageImage
+        {
+            get => _damageImage;
+            set => SetProperty(ref _damageImage, value, () => DamageImage);
+        }
+
         public ParcelDockpaneViewModel()
         {
             SelectParcelCommand = new ArcGIS.Desktop.Framework.RelayCommand(SelectParcel);
             MapSelectionChangedEvent.Subscribe(OnMapSelectionChanged);
+
+            // Example records for demonstration
+            DamageAssessmentRecords.Add(new DamageAssessmentRecord { RecordName = "Record 1", DamageLevel = "Minor", Image = null });
+            DamageAssessmentRecords.Add(new DamageAssessmentRecord { RecordName = "Record 2", DamageLevel = "Major", Image = null });
+            DamageAssessmentRecords.Add(new DamageAssessmentRecord { RecordName = "Record 3", DamageLevel = "Destroyed", Image = null });
         }
 
-        protected override void OnHidden()
-        {
-            MapSelectionChangedEvent.Unsubscribe(OnMapSelectionChanged);
-            base.OnHidden();
-        }
+        //protected override void OnHidden()
+        //{
+        //    MapSelectionChangedEvent.Unsubscribe(OnMapSelectionChanged);
+        //    base.OnHidden();
+        //}
 
         private void OnMapSelectionChanged(MapSelectionChangedEventArgs args)
         {
