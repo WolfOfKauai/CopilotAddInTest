@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArcGIS defaultAssembly="LookupFireDamage.dll"
+        defaultNamespace="LookupFireDamage"
+        xmlns="http://schemas.esri.com/DADF/Registry"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+
+  <AddInInfo id="{19b63ed0-23cb-4421-aef8-e8a0219262e4}" version="1.0" desktopVersion="3.6.59527" product="ArcGISPro">
+    <Name>LookupFireDamage</Name>   
+    <Description>LookupFireDamage description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>wolf2125</Author>
+    <Company>Acme</Company>
+    <Date>3/6/2026 11:53:20</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+
+  <modules>
+    <insertModule id="LookupFireDamage_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="FireDamage_Tab" caption="Fire Damage">
+          <group refID="DamageLookup_Group"/>
+        </tab>
+      </tabs>
+              
+      <groups>
+        <group id="DamageLookup_Group" caption="Damage Lookup" 
+							 appearsOnAddInTab="false">
+          <button refID="StructureDamageLookup_Button" />
+        </group>
+      </groups>
+      
+      <controls>
+        <button id="StructureDamageLookup_Button"
+                className="StructureDamageLookupButton"
+                caption="Structure Damage Lookup"
+                keytip="S"
+                largeImage="FireSimulation16"
+                smallImage="FireSimulation32" />
+      </controls>
+      
+      
+    </insertModule>
+  </modules>
+</ArcGIS>

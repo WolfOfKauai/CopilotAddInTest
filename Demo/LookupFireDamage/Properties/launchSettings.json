@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "LookupFireDamage": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\ArcGIS\\Pro\\bin\\ArcGISPro.exe",
+      "commandLineArgs": "\"C:\\DevSummit\\DevSummitMaps\\FireMap\\CA-WildFireMap.aprx\""
+    }
+  }
+}
