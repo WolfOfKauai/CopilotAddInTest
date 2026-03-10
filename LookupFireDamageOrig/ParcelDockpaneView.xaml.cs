@@ -1,6 +1,6 @@
 using System.Windows.Controls;
 
-namespace LookupFireDamage
+namespace LookupFireDamageOrig
 {
     public partial class ParcelDockpaneView : UserControl
     {

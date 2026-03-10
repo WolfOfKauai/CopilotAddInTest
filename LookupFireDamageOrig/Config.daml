@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ArcGIS defaultAssembly="LookupFireDamage.dll"
-        defaultNamespace="LookupFireDamage"
+<ArcGIS defaultAssembly="LookupFireDamageOrig.dll"
+        defaultNamespace="LookupFireDamageOrig"
         xmlns="http://schemas.esri.com/DADF/Registry"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://schemas.esri.com/DADF/Registry https://github.com/Esri/arcgis-pro-sdk/blob/master/References/ArcGIS.Desktop.Framework.xsd">
 
   <AddInInfo id="{155ecc81-f1bf-403d-b56d-755f1437100a}" version="1.0" desktopVersion="3.7.395" product="ArcGISPro">
-    <Name>LookupFireDamage</Name>   
-    <Description>LookupFireDamage description</Description>
+    <Name>LookupFireDamageOrig</Name>   
+    <Description>LookupFireDamageOrig description</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>wlfka</Author>
     <Company>Acme</Company>
@@ -18,7 +18,7 @@
   </AddInInfo>
 
   <modules>
-    <insertModule id="LookupFireDamage_Module" className="Module1" autoLoad="false" caption="Module1">
+    <insertModule id="LookupFireDamageOrig_Module" className="Module1" autoLoad="false" caption="Module1">
       <!-- uncomment to have the control hosted on a separate tab-->
       <tabs>
         <tab id="FireDamage_Tab" caption="Fire Damage">
@@ -43,7 +43,6 @@
           <tooltip heading="Lookup Structure Damage">Lookup structure damage by parcel.<disabledText /></tooltip>
         </button>
       </controls>
-
       <dockPanes>
         <dockPane id="ParcelDockpane"
                   caption="Parcel Lookup"

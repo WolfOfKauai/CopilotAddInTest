@@ -19,7 +19,7 @@ using ArcGIS.Desktop.KnowledgeGraph;
 using ArcGIS.Desktop.Layouts;
 using ArcGIS.Desktop.Mapping;
 
-namespace LookupFireDamage
+namespace LookupFireDamageOrig
 {
     internal class Module1 : Module
     {
@@ -28,7 +28,7 @@ namespace LookupFireDamage
         /// <summary>
         /// Retrieve the singleton instance to this module here
         /// </summary>
-        public static Module1 Current => _this ??= (Module1)FrameworkApplication.FindModule("LookupFireDamage_Module");
+        public static Module1 Current => _this ??= (Module1)FrameworkApplication.FindModule("LookupFireDamageOrig_Module");
 
         #region Overrides
         /// <summary>

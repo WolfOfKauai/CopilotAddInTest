@@ -2,7 +2,7 @@ using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Dialogs;
 
-namespace LookupFireDamage
+namespace LookupFireDamageOrig
 {
     internal class StructureDamageLookupButton : Button
     {

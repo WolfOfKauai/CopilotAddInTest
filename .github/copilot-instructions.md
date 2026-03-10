@@ -6,7 +6,7 @@ I am developing ArcGIS Pro Add-ins using the ArcGIS Pro SDK.
 - When providing code examples, follow the patterns and best practices from the official ArcGIS Pro SDK documentation and samples.
 - Prefer C# for all code snippets and explanations.
 - Reference and leverage the code snippets available at: https://github.com/Esri/arcgis-pro-sdk-snippets and at: https://github.com/Esri/arcgis-pro-sdk
-- Assume the development environment is Visual Studio 2022 or later.
+- Assume the development environment is Visual Studio 2022 or Visual Studio 2026.
 - Use a tab size as defined in the Visual Studio settings (usually 2 spaces).
 - To open ArcGIS Pro items, use the OpenItemDialog rather than the standard OpenFileDialog.
 - To display a message box, use the ArcGIS.Desktop.Framework.Dialogs.MessageBox class.
