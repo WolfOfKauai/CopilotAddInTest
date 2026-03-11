@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArcGIS defaultAssembly="LookupFireDamageTest.dll"
+        defaultNamespace="LookupFireDamageTest"
+        xmlns="http://schemas.esri.com/DADF/Registry"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+
+  <AddInInfo id="{48b63241-3c94-47f3-9cfe-e61889fe983a}" version="1.0" desktopVersion="3.7.545" product="ArcGISPro">
+    <Name>LookupFireDamageTest</Name>   
+    <Description>LookupFireDamageTest description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>wolf2125</Author>
+    <Company>Acme</Company>
+    <Date>3/10/2026 20:53:09</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+
+  <modules>
+    <insertModule id="LookupFireDamageTest_Module" className="Module1" autoLoad="false" caption="Module1">
+      <tabs>
+        <tab id="DamageAssessment_Tab" caption="Damage Assessment">
+          <group refID="DamageLookup_Group" />
+        </tab>
+      </tabs>
+              
+      <groups>
+        <group id="DamageLookup_Group" caption="Damage Lookup">
+          <button refID="StructureDamageLookup_Button" />
+        </group>
+      </groups>
+      
+      <controls>
+        <button id="StructureDamageLookup_Button" className="StructureDamageLookupButton" caption="Structure Damage Lookup" keytip="S" 
+								smallImage="FireSimulation16"
+								largeImage="FireSimulation32">
+          <tooltip heading="Structure Damage Lookup">Look up structure damage information<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="LookupFireDamageTest_ParcelDockpane" 
+									className="ParcelDockpaneViewModel"
+									caption="Parcel Lookup"
+                  dock="group"
+									dockWith="esri_core_contentsPane">
+          <content className="ParcelDockpaneView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>
