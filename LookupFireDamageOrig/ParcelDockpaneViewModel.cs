@@ -86,7 +86,7 @@ namespace LookupFireDamageOrig
             await ArcGIS.Desktop.Framework.Threading.Tasks.QueuedTask.Run(() =>
             {
                 // Find the "Damage Assessment" feature layer
-                var damageImagesLayer = mapView.Map?.Layers.OfType<ArcGIS.Desktop.Mapping.FeatureLayer>().FirstOrDefault(l => l.Name == "c");
+                var damageImagesLayer = mapView.Map?.Layers.OfType<ArcGIS.Desktop.Mapping.FeatureLayer>().FirstOrDefault(l => l.Name == "Damage Assessment");
                 if (damageImagesLayer == null)
                 {
                     System.Windows.Application.Current.Dispatcher.Invoke(() => DamageImage = null);
