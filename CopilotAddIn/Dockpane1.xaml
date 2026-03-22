@@ -1,0 +1,40 @@
+<UserControl x:Class="CopilotAddIn.Dockpane1View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#FF0079C1" Padding="10">
+            <TextBlock Text="{Binding Heading}" 
+                       Foreground="White" 
+                       FontSize="16" 
+                       FontWeight="Bold"/>
+        </Border>
+
+        <!-- Content -->
+        <StackPanel Grid.Row="1" Margin="10">
+            <TextBlock Text="{Binding Message}" 
+                       TextWrapping="Wrap" 
+                       Margin="0,0,0,10"/>
+            
+            <Button Content="Sample Action" 
+                    Padding="10,5" 
+                    Margin="0,10,0,0"
+                    HorizontalAlignment="Left"/>
+
+            <TextBlock Text="This is a sample dockpane for testing Copilot functionality." 
+                       TextWrapping="Wrap"
+                       Margin="0,20,0,0"
+                       Foreground="Gray"
+                       FontStyle="Italic"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
